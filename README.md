@@ -57,3 +57,16 @@ npm start
 > This is to simulate a production (CDN) server with gzip. It just serves up the contents of `./build`.
 
 
+## CORS and using e.g. a demo app 
+This app will expect to find the elasticsearch service running on `http://localhost:9200`
+
+To be able to test, you need to set CORS e.g. in your elasticsearch.yml
+
+Here are the MOST INSECURE settings:
+
+```
+http.cors.enabled : true
+http.cors.allow-origin : "*"
+http.cors.allow-methods : OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Length
+```
